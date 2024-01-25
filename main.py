@@ -33,6 +33,14 @@ async def on_ready():
     print(f'{bot.user} successfully connected to Discord!')
 
 @bot.command()
+async def helpcommands(ctx):
+    embed = discord.Embed(title="Help", description=" ", color=0xf8c8dc)
+    embed.add_field(name='!hi', value='Greet the user with a random message.', inline=False)
+    embed.add_field(name='!powder', value='Send a random picture.', inline=False)
+    embed.add_field(name='!joke', value='Tell a random joke.', inline=False)
+    await ctx.send(embed=embed)
+
+@bot.command()
 async def hi(ctx):
     greetings = [
     f'Well, well, well, if it isn\'t {ctx.author.mention} gracing us with their presence!',
